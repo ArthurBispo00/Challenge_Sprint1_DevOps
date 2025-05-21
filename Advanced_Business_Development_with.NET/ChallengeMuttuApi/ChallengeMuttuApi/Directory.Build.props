@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <NuGetPackageFolders>/root/.nuget/packages/</NuGetPackageFolders>
+    <RestorePackagesPath>/root/.nuget/packages/</RestorePackagesPath>
+    
+    <RestoreSources>https://api.nuget.org/v3/index.json</RestoreSources>
+    <FallbackFolders></FallbackFolders> <RestoreFallbackFolders></RestoreFallbackFolders>
+    <RestoreAdditionalProjectSources></RestoreAdditionalProjectSources>
+    <RestoreAdditionalProjectFallbackFolders></RestoreAdditionalProjectFallbackFolders>
+    
+    <ClearNuGetFallbackFolders>true</ClearNuGetFallbackFolders> 
+  </PropertyGroup>
+</Project>
