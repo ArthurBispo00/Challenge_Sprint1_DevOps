@@ -156,3 +156,55 @@ az vm auto-shutdown \
   --time 02:15 \
 ```
 ---
+
+---
+
+## 🐳 Próximos Passos
+
+---
+
+### Após a criação da VM:
+
+### 1. Conecte via SSH:
+
+```bash
+ssh metamind@<IP-PUBLICO-DA-VM>
+```
+---
+
+### 2. Instale o Docker:
+
+```bash
+sudo apt update && sudo apt install -y docker.io
+sudo usermod -aG docker $USER
+newgrp docker
+```
+---
+
+### 📂 3. Clonar o repositório 
+
+
+```bash
+git clone https://github.com/<SEU_USUARIO>/<SEU_REPOSITORIO>.git
+cd <SEU_REPOSITORIO>
+```
+
+### 🛠 4. Build da imagem Docker
+
+
+```bash
+docker build -t desafio-muttu-api .
+```
+
+### ▶️ 5. Rodar o container
+
+```bash
+docker run -d -p 8080:80 --name desafio-api desafio-muttu-api
+```
+
+### ✅ 6. Acessar a API
+
+
+```bash
+http://<IP_PÚBLICO_DA_VM>:8080/swagger
+```
