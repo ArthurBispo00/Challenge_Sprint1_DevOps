@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # 1️⃣ Login na conta Azure (faça login interativamente)
 az login
 

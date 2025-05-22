@@ -19,6 +19,12 @@ Este repositório contém a solução containerizada de uma API .NET com persist
 
 ## 🧱 Etapas de Implantação
 
+Obs: Caso tenha queira utilizar o arquivo "criar-vm-metamind.sh" coloque-o dentro do CLI e de permissões a ele executar com comando: 
+
+```bash
+chmod +x criar-vm-metamind.sh
+```
+
 ### 1. Criar um Grupo de Recursos
 
 ```bash
