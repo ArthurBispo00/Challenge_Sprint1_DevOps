@@ -121,6 +121,17 @@ az network nsg rule create \
   --destination-port-range 8080 \
   --access allow \
   --direction inbound
+
+# Adicionada regra para Oracle DB na porta 1521
+az network nsg rule create \
+  --resource-group rg-metamind-radamottu \
+  --nsg-name nsg-metamind \
+  --name Allow_Oracle_DB_1521 \
+  --protocol tcp \
+  --priority 1020 \
+  --destination-port-range 1521 \
+  --access allow \
+  --direction inbound
 ```
 ---
 
@@ -227,4 +238,17 @@ http://<IP_PÚBLICO_DA_VM>:8080/swagger
 
 ```bash
 az group delete --name rg-metamind-radamottu --yes
+```
+
+### Exemplo de Json para Teste
+
+Na aba patio utilizar seguinte Json
+
+```bash
+ {
+  "NomePatio": "patio avariado",
+  "DataEntrada": "2025-05-22T23:00:51.985Z",
+  "DataSaida": "2025-05-22T23:00:51.985Z",
+  "Observacao": "recebe motos avariadas"
+} 
 ```

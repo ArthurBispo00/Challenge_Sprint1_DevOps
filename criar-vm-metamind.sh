@@ -28,7 +28,7 @@ az network nsg create \
   --resource-group rg-metamind-radamottu \
   --name nsg-metamind
 
-# 6️⃣ Regras de segurança para portas 22 (SSH) e 8080 (API)
+# 6️⃣ Regras de segurança para portas 22 (SSH), 8080 (API) e 1521 (Oracle DB)
 az network nsg rule create \
   --resource-group rg-metamind-radamottu \
   --nsg-name nsg-metamind \
@@ -46,6 +46,17 @@ az network nsg rule create \
   --protocol tcp \
   --priority 1010 \
   --destination-port-range 8080 \
+  --access allow \
+  --direction inbound
+
+# Adicionada regra para Oracle DB na porta 1521
+az network nsg rule create \
+  --resource-group rg-metamind-radamottu \
+  --nsg-name nsg-metamind \
+  --name Allow_Oracle_DB_1521 \
+  --protocol tcp \
+  --priority 1020 \
+  --destination-port-range 1521 \
   --access allow \
   --direction inbound
 
