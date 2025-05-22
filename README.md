@@ -210,10 +210,10 @@ docker volume create desafio-api-volume
 
 
 
-### ▶️ 6. Rodar o container com volume
+### ▶️ 6. Rodar o container
 
 ```bash
-docker run -d -p 8080:80 --name desafio-api -v desafio-api-volume:/app/data desafio-muttu-api
+docker run -d -p 8080:80 -e ASPNETCORE_URLS=http://+:80 desafio-muttu-api
 ```
 
 ### ✅ 6. Acessar a API
