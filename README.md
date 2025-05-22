@@ -196,10 +196,18 @@ cd <SEU_REPOSITORIO>
 docker build -t desafio-muttu-api .
 ```
 
-### ▶️ 5. Rodar o container
+### 5. Criar volume para persistência
 
 ```bash
-docker run -d -p 8080:80 --name desafio-api desafio-muttu-api
+docker volume create desafio-api-volume
+```
+
+
+
+### ▶️ 6. Rodar o container com volume
+
+```bash
+docker run -d -p 8080:80 --name desafio-api -v desafio-api-volume:/app/data desafio-muttu-api
 ```
 
 ### ✅ 6. Acessar a API
@@ -207,4 +215,10 @@ docker run -d -p 8080:80 --name desafio-api desafio-muttu-api
 
 ```bash
 http://<IP_PÚBLICO_DA_VM>:8080/swagger
+```
+
+### ✅ 7. Deletar a VM
+
+```bash
+az group delete --name rg-metamind-radamottu --yes
 ```
